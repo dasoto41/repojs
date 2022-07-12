@@ -11,7 +11,7 @@ else{
     alert("el numero es mayor o igual a 10")
 }
 
-/*desafio2 */
+/*desafio2 
 let ingreseCapital = parseInt(prompt("Ingrese Capital a Solicitar"));
 
 let ingresePlan = parseInt(prompt("Ingrese Plan de Cuotas Elegido:3, 6 o 9 cuotas mensuales"));
@@ -47,27 +47,31 @@ const calculadora = (ingreseCapital, ingresePlan) => {
 
     
 }
-calculadora(ingreseCapital, ingresePlan);
+calculadora(ingreseCapital, ingresePlan);*/
 
-
-
-
-
-
-
-
-
-/*function calculadora (ingreseCapital,ingresePlan){
-    
-    if (ingresePlan ===3) {(ingreseCapital*1.20/ingresePlan);
-        
+class Solicitudes {
+    constructor(nombre,apellido,dni,capital,plan) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.capital = capital;
+        this.plan = plan;
+        this.otorgado = false;
     }
-    else if(ingresePlan ===6){(ingreseCapital*1.45/ingresePlan);
+}
+const creditos = [];
+creditos.push(new Solicitudes("Daniela","Soto", 32587456 , 100000, 12));
+creditos.push(new Solicitudes("Noelia","Manresa",35697412, 180000,9));
+creditos.push(new Solicitudes("Facundo","Diaz", 30145236, 20000,6));
+creditos.push(new Solicitudes("Matias","Lopez", 42156874, 2000,3));
 
-    }
-     else {(ingreseCapital*1.60/ingresePlan);
-        
-    }
-}*/
+console.log(creditos);
+
+
+
+
+
+
+
 
 
