@@ -47,7 +47,7 @@ const calculadora = (ingreseCapital, ingresePlan) => {
 
     
 }
-calculadora(ingreseCapital, ingresePlan);*/
+calculadora(ingreseCapital, ingresePlan);
 
 class Solicitudes {
     constructor(nombre,apellido,dni,capital,plan) {
@@ -65,13 +65,52 @@ creditos.push(new Solicitudes("Noelia","Manresa",35697412, 180000,9));
 creditos.push(new Solicitudes("Facundo","Diaz", 30145236, 20000,6));
 creditos.push(new Solicitudes("Matias","Lopez", 42156874, 2000,3));
 
-console.log(creditos);
+console.log(creditos);*/
 
 
 
+class Solicitudes {
+    constructor(nombre,dni,capital,plan,ingresoMensual) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.capital = parseInt(capital);
+        this.plan = parseInt(plan);
+        this.ingresoMensual= parseInt(ingresoMensual);
+        this.apto = false;
+    }
+
+    aptitud(){ this.apto=true;}
+        
+}
+const creditos = [];
+
+for(i=0;i<3;i++){
+let entrada=prompt("ingrese su nombre o ESC para salir");
+
+    if(entrada==="esc"|| entrada === "ESC"||entrada === "Esc"){
+        break;
+    }else{
+         nombreIngr=entrada;
+        let dniIngr=prompt("ingrese su DNI");
+        let capitalIngr=prompt("ingrese capital a solicitar");
+        let planIngr=prompt("ingrese plan de cuotas MENSUALES => colocar = 3 : para 3 cuotas mensuales;6 : para 6 cuotas mensuales; 9: para 9 cuotas mensuales ; 12 para 12 cuotas mensuales");
+        let ingresoMensualIngr=prompt("especifique su ingreso mensual neto");
+        creditos.push(new Solicitudes(nombreIngr,dniIngr,capitalIngr,planIngr,ingresoMensualIngr));
+    }  
+}
+
+  
+
+  for(const elemento of creditos){
+    if(elemento.capital<(elemento.ingresoMensual*2)){
+      elemento.aptitud();
+      alert("es apto");
+
+    }else{
+        alert("no es apto");
+    }
+    
+  }
 
 
-
-
-
-
+  console.log(creditos);
