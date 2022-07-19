@@ -69,7 +69,7 @@ console.log(creditos);*/
 
 
 
-class Solicitudes {
+class Solicitud{
     constructor(nombre,dni,capital,plan,ingresoMensual) {
         this.nombre = nombre;
         this.dni = dni;
@@ -85,9 +85,9 @@ class Solicitudes {
 const creditos = [];
 
 for(i=0;i<3;i++){
-let entrada=prompt("ingrese su nombre o ESC para salir");
+let entrada=prompt("ingrese su nombre o ESC para salir").toLowerCase();
 
-    if(entrada==="esc"|| entrada === "ESC"||entrada === "Esc"){
+    if(entrada==="esc"){
         break;
     }else{
          nombreIngr=entrada;
@@ -95,7 +95,7 @@ let entrada=prompt("ingrese su nombre o ESC para salir");
         let capitalIngr=prompt("ingrese capital a solicitar");
         let planIngr=prompt("ingrese plan de cuotas MENSUALES => colocar = 3 : para 3 cuotas mensuales;6 : para 6 cuotas mensuales; 9: para 9 cuotas mensuales ; 12 para 12 cuotas mensuales");
         let ingresoMensualIngr=prompt("especifique su ingreso mensual neto");
-        creditos.push(new Solicitudes(nombreIngr,dniIngr,capitalIngr,planIngr,ingresoMensualIngr));
+        creditos.push(new Solicitud(nombreIngr,dniIngr,capitalIngr,planIngr,ingresoMensualIngr));
     }  
 }
 
@@ -114,3 +114,13 @@ let entrada=prompt("ingrese su nombre o ESC para salir");
 
 
   console.log(creditos);
+
+  let contenedor=document.getElementById("container");
+
+  for(const elemento of creditos){
+    let li=document.createElement("li");
+    li.innerHTML=`<h1>BIENVENIDO/A ${elemento.nombre}</h1>
+                  
+                `
+    contenedor.append(li)         
+  }
