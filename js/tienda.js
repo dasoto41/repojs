@@ -4,7 +4,7 @@ const productos = [
         nombre: "DOLAR",
         precio: 300,
         cantidad: 1,
-        img: "./imagenes/dolar.jpeg"
+        img: "/imagenes/DOLAR.jpeg"
     },
 
     {
@@ -12,7 +12,7 @@ const productos = [
         nombre: "PESO CHILENO",
         precio: 500,
         cantidad: 1,
-        img: "./imagenes/peso chileno.jpg",
+        img: "/imagenes/peso chileno.jpg",
     }
 
 ]
@@ -41,10 +41,16 @@ const mostrarProductos = (productos) => {
         contenedor.appendChild(div)
 
         const boton = document.getElementById(`boton${producto.id}`)
+        console.log(boton)
         boton.addEventListener("click", () => {
             carritoIndex(producto.id)
 
-            alert("producto agregado")
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial!!',
+                text: 'Producto Agregado!',
+
+            })
 
         })
 
