@@ -13,7 +13,7 @@ function aptitud(a, b) {
     aprobado ? Swal.fire({
         icon: 'error',
 
-        text: 'Cliente  NO APTO!',
+        text: 'Cliente  NO APTO!- INTENTE CON OTRO CLIENTE',
 
     }) &&
         formulario.reset()
@@ -21,33 +21,11 @@ function aptitud(a, b) {
         Swal.fire({
             icon: 'success',
 
-            text: 'Cliente APTO!',
+            text: 'Cliente APTO!-SOLICITUD ENVIADA',
 
-        })&&
-    
-    formulario.reset();
+        }) &&
 
-    /*
-        if (a > (b * 2)) {
-            Swal.fire({
-                icon: 'error',
-    
-                text: 'Cliente  NO APTO!',
-    
-            });
-            formulario.reset();
-        }
-    
-        else {
-            Swal.fire({
-                icon: 'success',
-    
-                text: 'Cliente APTO!',
-    
-            })
-            alert("formulario enviado");
-            formulario.reset();
-        }*/
+        formulario.reset();
 }
 
 

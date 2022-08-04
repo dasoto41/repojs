@@ -21,7 +21,7 @@ function simular() {
 
     let nombreIngr = prompt("ingrese su nombre").toLowerCase();
     let capitalIngr = prompt("ingrese capital a solicitar");
-    let planIngr = prompt("ingrese plan de cuotas MENSUALES => colocar = * 3 : para 3 cuotas mensuales"+" "+ "* 6 : para 6 cuotas mensuales" +" "+ "*9: para 9 cuotas mensuales " +" "+"*12 para 12 cuotas mensuales");
+    let planIngr = prompt("ingrese plan de cuotas MENSUALES => colocar = * 3 : para 3 cuotas mensuales" + " " + "* 6 : para 6 cuotas mensuales" + " " + "*9: para 9 cuotas mensuales " + " " + "*12 para 12 cuotas mensuales");
 
     creditos.push(new Solicitud(nombreIngr, capitalIngr, planIngr));
 
@@ -29,7 +29,7 @@ function simular() {
 
     for (const elemento of creditos) {
         let li = document.createElement("li");
-        li.innerHTML = `<h1>BIENVENID@ ${elemento.nombre}!!</h1>
+        li.innerHTML = `<h1>BIENVENID@ ${elemento.nombre} !!</h1>
                   
                 `
         contenedor.append(li)
@@ -40,20 +40,54 @@ function simular() {
     while (planIngr != "") {
         switch (planIngr) {
             case "3":
-                alert("su cuota mensual es de " + Math.round(`${capitalIngr}` * 1.3 / 3));
+                Swal.fire({
+                    title: "su cuota mensual es de: $  " + Math.round(`${capitalIngr}` * 1.3 / 3),
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+
                 break;
 
             case "6":
-                alert("su cuota mensual es de " + Math.round(`${capitalIngr}` * 1.55 / 3));
-                
+                Swal.fire({
+                    title: "su cuota mensual es de: $  " + Math.round(`${capitalIngr}` * 1.55 / 6),
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+
+
                 break;
 
             case "9":
-                alert("su cuota mensual es de " + Math.round(`${capitalIngr}` * 1.75 / 3));
+                Swal.fire({
+                    title: "su cuota mensual es de: $  " + Math.round(`${capitalIngr}` * 1.75 / 9),
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
                 break;
 
             case "12":
-                alert("su cuota mensual es de " + Math.round(`${capitalIngr}` * 1.9 / 3));
+                Swal.fire({
+                    title: "su cuota mensual es de: $  " + Math.round(`${capitalIngr}` * 1.95 / 12),
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
                 break;
 
             default:
@@ -63,7 +97,7 @@ function simular() {
 
         }
         let salida = prompt("ingrese ESC").toLowerCase;
-        
+
         if (salida === esc) {
             break;
         }
