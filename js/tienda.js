@@ -19,12 +19,19 @@ const productos = [
 
 /*renderizar productos a la pagina*/
 
-const mostrarProductos = (productos) => {
+fetch("/json/productos.json")
+.then((response) => response.json())
+.then( (data) => {
+    
+    
+
+
+const mostrarProductos = () => {
 
 
     const contenedor = document.getElementById("contenedorProd")
 
-    productos.forEach(producto => {
+    data.forEach(producto => {
         const div = document.createElement("div")
 
         div.innerHTML += `
@@ -58,8 +65,9 @@ const mostrarProductos = (productos) => {
     });
 
 }
+mostrarProductos(data)
 
-mostrarProductos(productos)
+
 
 
 
@@ -68,6 +76,7 @@ mostrarProductos(productos)
 
 
 let carrito = [];/*para guardar productos que compran*/
+
 
 
 
@@ -81,7 +90,7 @@ const carritoIndex = (productoId) => {
 
 
 
-        let producto = productos.find(producto => producto.id == productoId)
+        let producto = data.find(producto => producto.id == productoId)
 
 
         carrito.push(producto);
@@ -109,7 +118,7 @@ const carritoIndex = (productoId) => {
         carritoContenedorB.addEventListener("click", eliminarProducto);
 
         function eliminarProducto(productoId) {
-            let producto = productos.filter(producto => producto.id == productoId);
+            let producto = data.filter(producto => producto.id == productoId);
             div.innerHTML = " ";
             console.log(producto)
 
@@ -158,3 +167,4 @@ modalCarrito.addEventListener('click', (e) => {
     e.stopPropagation();
 })
 
+})
