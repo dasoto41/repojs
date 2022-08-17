@@ -94,46 +94,37 @@
     text-decoration: none;
   }
 
-
+ /*PAGE TIENDA*/
   .imagen-producto{
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 200px;
     border-radius: 25px;
     margin-left: 30px;
   }
-  .modal-active{
-    opacity: 1;
-    visibility: visible;
-    z-index: 5;
-    margin-left: 1000px;
-    background-color: #b5f1e2;
-    margin-bottom: 500px;
+ 
+
+  .padre{
+    display: flex;
+    flex-direction: column;
   }
 
-
-
-  .modal-container {
-  
+  .cart{
+    border: solid 4px;
+    background-color: #9733EE;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed; 
-    background-color: blue;
-    width: 100%;
-    height: 100vh;
+    position: relative;
+    justify-self: right;
+    margin-top: 100px;
     visibility: hidden;
 
-    border-radius: 10px ;
-    z-index: 100;
-  } 
-  .productoEnCarrito {
-    border-left: 5px solid lightblue;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    margin: 5px 0;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: space-between;
-    
   }
-  
+  .simulador{
+    font-size: 25px;
+    background-color: rgb(143, 41, 245);
+
+  }
+  .formularios{
+    padding: 45px;
+    border: solid 2px; 
+    margin-bottom: 30px;
+  }
